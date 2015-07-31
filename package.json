@@ -1,0 +1,34 @@
+{
+  "name": "js-text-templating",
+  "version": "1.0.0",
+  "description": "Micro library to have template texts in JS",
+  "main": "templater.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paolocarrasco/js-text-templating.git"
+  },
+  "keywords": [
+    "micro",
+    "library",
+    "template",
+    "text"
+  ],
+  "author": "Paolo Carrasco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paolocarrasco/js-text-templating/issues"
+  },
+  "homepage": "https://github.com/paolocarrasco/js-text-templating#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "grunt": "^0.4.5",
+    "grunt-simple-mocha": "^0.4.0",
+    "load-grunt-tasks": "^3.2.0"
+  }
+}
