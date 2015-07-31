@@ -12,10 +12,23 @@ module.exports = function(grunt) {
         reporter: 'tap'
       },
       all: { src: ['tests/*.test.js'] }
+    },
+    eslint: {
+      target: ['templater.js'],
+      options: {
+        configFile: '.eslintrc'
+      }
+    },
+    watch: {
+      scripts: {
+        files: ['templater.js'],
+        tasks: ['default']
+      }
     }
   });
 
   grunt.registerTask('default', [
+    'eslint',
     'simplemocha'
   ]);
 };

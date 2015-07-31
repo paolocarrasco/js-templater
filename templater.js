@@ -1,3 +1,5 @@
+'use strict';
+
 var templates = {};
 
 function createTemplate(name, template) {

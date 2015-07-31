@@ -23,7 +23,7 @@ describe('templater', function() {
       templater.create(key, templateWithArguments);
     });
 
-    describe('when all the arguments were set', function() {
+    describe('and all the arguments are set', function() {
       var resultingText;
       var name;
 
