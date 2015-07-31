@@ -1,21 +1,30 @@
-'use strict';
+var root = this;
 
-var templates = {};
-
-function createTemplate(name, template) {
-  templates[name] = template;
+if (root.exports) {
+  root = root.exports;
 }
 
-function getTemplate(name, valuesContainer) {
-  var resultingText = templates[name];
-  for(var key in valuesContainer) {
-    var pattern = new RegExp('\{\{' + key + '\}\}');
-    resultingText = resultingText.replace(pattern, valuesContainer[key]);
+(function(namespace) {
+  'use strict';
+
+  var templates = {};
+
+  function createTemplate(name, template) {
+    templates[name] = template;
   }
-  return resultingText;
-}
 
-module.exports = {
-  create: createTemplate,
-  get: getTemplate
-};
+  function getTemplate(name, valuesContainer) {
+    var resultingText = templates[name];
+    for(var key in valuesContainer) {
+      var pattern = new RegExp('\{\{' + key + '\}\}');
+      resultingText = resultingText.replace(pattern, valuesContainer[key]);
+    }
+    return resultingText;
+  }
+
+  namespace.templater = {
+    create: createTemplate,
+    get: getTemplate
+  };
+
+})(root);
