@@ -40,7 +40,6 @@ describe('templater', function() {
     });
 
     describe('and some of the arguments are set', function() {
-
       beforeEach(function() {
         name = chance.name();
         resultingText = templater.get(key, {fullName: name});
@@ -48,6 +47,16 @@ describe('templater', function() {
 
       it('should replace only the arguments set', function() {
         expect(resultingText).to.equal('Hello ' + name + ' from {{country}}');
+      });
+    });
+
+    describe('and no arguments are set', function() {
+      beforeEach(function() {
+        resultingText = templater.get(key);
+      });
+
+      it('should show the template', function() {
+        expect(resultingText).to.equal('Hello {{fullName}} from {{country}}');
       });
     });
   });
