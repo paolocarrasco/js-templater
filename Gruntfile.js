@@ -14,21 +14,39 @@ module.exports = function(grunt) {
       all: { src: ['tests/*.test.js'] }
     },
     eslint: {
-      target: ['templater.js'],
-      options: {
-        configFile: '.eslintrc'
+      dev: {
+        src: ['templater.js'],
+        options: {
+          config: '.eslintrc'
+        }
+      },
+      test: {
+        src: ['tests/*.js'],
+        options: {
+          config: 'tests/.eslintrc'
+        }
       }
     },
     watch: {
-      scripts: {
+      dev: {
         files: ['templater.js'],
-        tasks: ['default']
+        tasks: ['development']
+      },
+      testing: {
+        files: ['tests/*.js'],
+        tasks: ['development']
       }
     }
   });
 
+  grunt.registerTask('development', [
+    'eslint:test',
+    'eslint:dev',
+    'simplemocha'
+  ]);
+
   grunt.registerTask('default', [
-    'eslint',
+    'eslint: dev',
     'simplemocha'
   ]);
 };
