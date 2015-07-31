@@ -1,5 +1,5 @@
 {
-  "name": "js-text-templating",
+  "name": "js-templater",
   "version": "1.0.0",
   "description": "Micro library to have template texts in JS",
   "main": "templater.js",

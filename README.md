@@ -28,4 +28,4 @@ console.log(str);
 ## How to run the tests
 - First of all, install Node 0.11+.
 - Next step is to execute ```npm install``` in the command line.
-- Finally type ```npm test``` and all the tests will be run. Their source code can be found in [the test folder](js-text-templating/tests/templater.test.js).
+- Finally type ```npm test``` and all the tests will be run. Their source code can be found in [the test folder](https://github.com/paolocarrasco/js-templater/blob/master/tests/).
